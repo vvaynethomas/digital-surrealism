@@ -1,0 +1,16 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local NLTK downloads and deliberately separated experiment outputs
+/nltk_data/
+/outputs/
+
+# Editor/OS workspace files and Word lock files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+~$*.docx
