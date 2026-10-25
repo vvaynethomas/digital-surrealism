@@ -151,7 +151,7 @@ def extract_from_document(filepath, output_type ='runs',output_size = randint(4,
 
     elif filepath.endswith('.pdf'):
         try:
-            extract_from_pdf(filepath,type='page',output_type=output_type,output_size = output_size)
+            return extract_from_pdf(filepath,type='page',output_type=output_type,output_size = output_size)
         except FileNotFoundError:
             print("couldn't scrape pdf")
             return

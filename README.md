@@ -148,6 +148,25 @@ could select a single portable demo, resolve its dependencies and existing
 runtime errors, provide rights-cleared sample input, configure paths, and add
 a smoke test. A complete gallery or package is not required to read the project.
 
+### Isolated dispatch regression checks
+
+A small follow-up corrects discarded PDF return values in `extract_from_document`
+in `fragment_generator.py` and `anaphoric writing.py`; the underlying extraction
+and creative methods are unchanged. Run the standard-library checks from the
+repository root:
+
+```powershell
+python -m unittest discover -s tests -v
+```
+
+The four tests cover both dispatchers using their extracted function syntax
+trees and mocked extractors, without importing side-effecting modules or needing
+external packages. Successful PDF results and options, existing DOCX behavior,
+the missing-file diagnostic, and propagation of other exceptions are checked.
+The successful-result cases failed before the return fix and pass afterward.
+These are dispatch tests, not PDF extraction or end-to-end generation tests.
+The historical parse blocker and other limitations recorded above remain.
+
 ## Reuse and collaboration
 
 Please contact me if you'd like to collaborate or use these tools in a public or commercial way.
